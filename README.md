@@ -27,7 +27,7 @@ Here is a sample table of the database:
 
 - **Quick and Easy Data Entry** - The data entry form allows users to efficiently input information into a system with minimal effort, often utilizing streamlined forms and automated tools to enhance accuracy and speed.
 - **Reduced Human Error** - The tool is designed to minimize accidental changes and forgetfulness, ensuring accurate data collection through user-friendly features and safeguards.
-- [**List of Nationalities**](nationalities.py) - The tool includes an updated list of nationalities for users to select from, streamlining the data entry process and ensuring consistency.
+- [**List of Nationalities**](nationality.py) - The tool includes an updated list of nationalities for users to select from, streamlining the data entry process and ensuring consistency.
 - **Backup Copy** - The details collected are stored in a database, ensuring secure and organized data management while facilitating easy retrieval and analysis.
 
 ## Requirements
