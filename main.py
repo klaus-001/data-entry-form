@@ -26,7 +26,7 @@ class Form:
         self.frame = ttk.Frame(self.window)
         self.frame.pack()
 
-        self.label_frame = ttk.LabelFrame(self.frame, text="User Information")
+        self.label_frame = ttk.LabelFrame(self.frame, text="User Information", padding=5)
         self.label_frame.grid(row=0, column=0, padx=20, pady=20)
 
         self.firstName_label = ttk.Label(self.label_frame, text="First Name")
@@ -65,7 +65,7 @@ class Form:
         for widget in self.label_frame.winfo_children():
             widget.grid_configure(padx=20, pady=5)
 
-        self.label_frame2 = ttk.LabelFrame(self.frame)
+        self.label_frame2 = ttk.LabelFrame(self.frame, padding=5)
         self.label_frame2.grid(row=1, column=0, sticky="news", padx=20, pady=20)
 
         self.registration_label = ttk.Label(self.label_frame2, text="Registration Status")
@@ -79,20 +79,20 @@ class Form:
 
         self.registration_box = ttk.Checkbutton(self.label_frame2, text="Currently Registered",
                                             variable=self.registered, onvalue=True, offvalue=False)
-        self.registration_box.grid(row=1, column=0, padx=10, pady=5)
+        self.registration_box.grid(row=1, column=0, pady=(0, 20))
 
         self.course_box = ttk.Spinbox(self.label_frame2, from_=0, to='infinity')
-        self.course_box.grid(row=1, column=1, padx=10, pady=5)
+        self.course_box.grid(row=1, column=1)
         self.course_box.bind("<Key>", self.disable_typing)
 
         self.semesters_box = ttk.Spinbox(self.label_frame2, from_=0, to='infinity')
-        self.semesters_box.grid(row=1, column=2, padx=10, pady=5)
+        self.semesters_box.grid(row=1, column=2)
         self.semesters_box.bind("<Key>", self.disable_typing)
 
         for widget in self.label_frame2.winfo_children():
-            widget.grid_configure(padx=10, pady=(5, 10))
+            widget.grid_configure(padx=10, pady=5)
 
-        self.label_frame3 = ttk.LabelFrame(self.frame, text="Terms & Conditions")
+        self.label_frame3 = ttk.LabelFrame(self.frame, text="Terms & Conditions", padding=5)
         self.label_frame3.grid(row=2, column=0, sticky="news", padx=20, pady=20)
 
         self.terms_box = ttk.Checkbutton(self.label_frame3, text="I accept the terms and condtions.",
