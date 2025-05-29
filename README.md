@@ -65,7 +65,7 @@ python main.py
 
 ## Contributing
 
-Contributions are welcome!. To get started, fork the repository and create a new branch for your change. When you're ready, submit a pull request with a clear description of the update.
+Contributions are welcome! To get started, fork the repository and create a new branch for your change. When you're ready, submit a pull request with a clear description of the update.
 
 ## License
 
