@@ -1,6 +1,17 @@
 # Data Entry Form
 
+![Data Entry Form](img/UI.png)
+
+## Introduction
+
 This project is a basic **Data Entry Form** developed using Python and the Tkinter library. It simplifies the process of entering student information, making data collection more efficient. The students' information is saved in a database, enabling convenient access and modification when required. This tool is especially useful for educational institutions managing large volumes of student records.
+
+## Features
+
+- **Quick and Easy Data Entry** - The data entry form allows users to efficiently input information into a system with minimal effort, often utilizing streamlined forms and automated tools to enhance accuracy and speed.
+- **Reduced Human Error** - The tool is designed to minimize accidental changes and forgetfulness, ensuring accurate data collection through user-friendly features and safeguards.
+- [**List of Nationalities**](nationality.py) - The tool includes an updated list of nationalities for users to select from, streamlining the data entry process and ensuring consistency.
+- **Database Management** - The details collected are stored in a database, ensuring secure and organized data management while facilitating easy retrieval and analysis.
 
 ## Personal Details
 
@@ -13,7 +24,7 @@ This project is a basic **Data Entry Form** developed using Python and the Tkint
 - Number of Semesters
 - Registration Status
 
-Here is a sample table of the database:
+## Sample Database
 
 | ID | First Name | Last Name | Salutation | Age | Nationality | # Courses | # Semesters | Registered |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -23,18 +34,11 @@ Here is a sample table of the database:
 | 4 | Perry | the Platypus | Engr. | 18 | Mexican | 4 | 1 | Yes |
 | 5 | Diana | Woods | Mrs. | 22 | Puerto Rican | 22 | 3 | No |
 
-## Features
-
-- **Quick and Easy Data Entry** - The data entry form allows users to efficiently input information into a system with minimal effort, often utilizing streamlined forms and automated tools to enhance accuracy and speed.
-- **Reduced Human Error** - The tool is designed to minimize accidental changes and forgetfulness, ensuring accurate data collection through user-friendly features and safeguards.
-- [**List of Nationalities**](nationality.py) - The tool includes an updated list of nationalities for users to select from, streamlining the data entry process and ensuring consistency.
-- **Backup Copy** - The details collected are stored in a database, ensuring secure and organized data management while facilitating easy retrieval and analysis.
-
 ## Requirements
 
 - Python 3.x
 - Sqlite3
-- Tkinter
+- sv_ttk
 
 ## Installation
 
@@ -42,17 +46,18 @@ Here is a sample table of the database:
 
 ```powershell
 git clone https://github.com/klaus-001/data-entry-form.git
+cd data-entry-form
 ```
 
 2. Install dependencies:
 
 ```powershell
-pip install
+pip install sv_ttk
 ```
 
 ## Usage
 
-Navigate to the directory and run the program by executing this command in your terminal:
+To run the program, execute the following command in your terminal:
 
 ```
 python main.py
