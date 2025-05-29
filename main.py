@@ -1,3 +1,4 @@
+import sv_ttk
 import sqlite3
 from tkinter import *
 from tkinter import ttk
@@ -7,6 +8,8 @@ from nationality import nationalities
 class Form:
     def __init__(self, window):
         self.window = window
+
+        sv_ttk.set_theme('dark')
 
         self.salutations = ['Mr.', 'Mrs.', 'Ms.']
 
@@ -20,38 +23,38 @@ class Form:
     def create_widgets(self):
         self.window.title("User Details")
 
-        self.frame = Frame(self.window)
+        self.frame = ttk.Frame(self.window)
         self.frame.pack()
 
-        self.label_frame = LabelFrame(self.frame, text="User Information")
+        self.label_frame = ttk.LabelFrame(self.frame, text="User Information")
         self.label_frame.grid(row=0, column=0, padx=20, pady=20)
 
-        self.firstName_label = Label(self.label_frame, text="First Name")
+        self.firstName_label = ttk.Label(self.label_frame, text="First Name")
         self.firstName_label.grid(row=0, column=0)
 
-        self.lastName_label = Label(self.label_frame, text="Last Name")
+        self.lastName_label = ttk.Label(self.label_frame, text="Last Name")
         self.lastName_label.grid(row=0, column=1)
 
-        self.title_label = Label(self.label_frame, text="Title")
+        self.title_label = ttk.Label(self.label_frame, text="Title")
         self.title_label.grid(row=0, column=2)
 
-        self.firstName_entry = Entry(self.label_frame)
+        self.firstName_entry = ttk.Entry(self.label_frame)
         self.firstName_entry.grid(row=1, column=0)
 
-        self.lastName_entry = Entry(self.label_frame)
+        self.lastName_entry = ttk.Entry(self.label_frame)
         self.lastName_entry.grid(row=1, column=1)
 
         self.salutations_box = ttk.Combobox(self.label_frame, values=self.salutations)
         self.salutations_box.set("Select an option")
         self.salutations_box.grid(row=1, column=2)
 
-        self.age_label = Label(self.label_frame, text="Age")
+        self.age_label = ttk.Label(self.label_frame, text="Age")
         self.age_label.grid(row=2, column=0)
 
-        self.nationality_label = Label(self.label_frame, text="Nationality")
+        self.nationality_label = ttk.Label(self.label_frame, text="Nationality")
         self.nationality_label.grid(row=2, column=1)
 
-        self.age_box = Spinbox(self.label_frame, from_=18, to=100, increment=1, wrap=True)
+        self.age_box = ttk.Spinbox(self.label_frame, from_=18, to=100, increment=1, wrap=True)
         self.age_box.grid(row=3, column=0)
         self.age_box.bind("<Key>", self.disable_typing)
 
@@ -60,43 +63,43 @@ class Form:
         self.nationality_box.bind("<Key>", self.disable_typing)
 
         for widget in self.label_frame.winfo_children():
-            widget.grid_configure(padx=10, pady=5)
+            widget.grid_configure(padx=20, pady=5)
 
-        self.label_frame2 = LabelFrame(self.frame)
+        self.label_frame2 = ttk.LabelFrame(self.frame)
         self.label_frame2.grid(row=1, column=0, sticky="news", padx=20, pady=20)
 
-        self.registration_label = Label(self.label_frame2, text="Registration Status")
+        self.registration_label = ttk.Label(self.label_frame2, text="Registration Status")
         self.registration_label.grid(row=0, column=0)
 
-        self.course_label = Label(self.label_frame2, text="# Course Completed")
+        self.course_label = ttk.Label(self.label_frame2, text="# Course Completed")
         self.course_label.grid(row=0, column=1)
 
-        self.semesters_label = Label(self.label_frame2, text="# Semesters")
+        self.semesters_label = ttk.Label(self.label_frame2, text="# Semesters")
         self.semesters_label.grid(row=0, column=2)
 
-        self.registration_box = Checkbutton(self.label_frame2, text="Currently Registered",
+        self.registration_box = ttk.Checkbutton(self.label_frame2, text="Currently Registered",
                                             variable=self.registered, onvalue=True, offvalue=False)
         self.registration_box.grid(row=1, column=0, padx=10, pady=5)
 
-        self.course_box = Spinbox(self.label_frame2, from_=0, to='infinity')
+        self.course_box = ttk.Spinbox(self.label_frame2, from_=0, to='infinity')
         self.course_box.grid(row=1, column=1, padx=10, pady=5)
         self.course_box.bind("<Key>", self.disable_typing)
 
-        self.semesters_box = Spinbox(self.label_frame2, from_=0, to='infinity')
+        self.semesters_box = ttk.Spinbox(self.label_frame2, from_=0, to='infinity')
         self.semesters_box.grid(row=1, column=2, padx=10, pady=5)
         self.semesters_box.bind("<Key>", self.disable_typing)
 
         for widget in self.label_frame2.winfo_children():
-            widget.grid_configure(padx=10, pady=5)
+            widget.grid_configure(padx=10, pady=(5, 10))
 
-        self.label_frame3 = LabelFrame(self.frame, text="Terms & Conditions")
+        self.label_frame3 = ttk.LabelFrame(self.frame, text="Terms & Conditions")
         self.label_frame3.grid(row=2, column=0, sticky="news", padx=20, pady=20)
 
-        self.terms_box = Checkbutton(self.label_frame3, text="I accept the terms and condtions.",
+        self.terms_box = ttk.Checkbutton(self.label_frame3, text="I accept the terms and condtions.",
                                      variable=self.terms_co, onvalue=True, offvalue=False)
-        self.terms_box.grid(row=0, column=0)
+        self.terms_box.grid(row=0, column=0, padx=10, pady=5)
 
-        self.enter_button = Button(self.frame, text="Enter Data", command=self.get_data)
+        self.enter_button = ttk.Button(self.frame, text="Enter Data", command=self.get_data)
         self.enter_button.grid(row=3, column=0, sticky="news", padx=20, pady=10)
 
     def get_data(self):
