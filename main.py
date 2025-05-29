@@ -79,7 +79,7 @@ class Form:
 
         self.registration_box = ttk.Checkbutton(self.label_frame2, text="Currently Registered",
                                             variable=self.registered, onvalue=True, offvalue=False)
-        self.registration_box.grid(row=1, column=0, pady=(0, 20))
+        self.registration_box.grid(row=1, column=0)
 
         self.course_box = ttk.Spinbox(self.label_frame2, from_=0, to='infinity')
         self.course_box.grid(row=1, column=1)
